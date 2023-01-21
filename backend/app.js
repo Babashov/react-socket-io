@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 let lastColor = "#282c34";
 
 io.on("connection", (socket) => {
-	console.log("bir kullanıcı bağlandı!");
+	console.log("User connected!");
 
 	socket.emit("receive", lastColor);
 
@@ -24,7 +24,7 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on("disconnect", () => {
-		console.log("Bir kullanıcı ayrıldı.");
+		console.log("User disconnected.");
 	});
 });
 
