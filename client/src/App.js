@@ -13,9 +13,14 @@ function App() {
     })
   },[])
 
+  const colorState = {
+    activeColor,
+    setActiveColor
+  }
+
   return (
     <div className="App" style={{backgroundColor:activeColor}}>
-      <Palette activeColor={activeColor}/>
+      <Palette colorState={colorState}/>
       <h1>{activeColor}</h1>
     </div>
   );

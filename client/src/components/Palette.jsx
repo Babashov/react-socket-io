@@ -1,12 +1,11 @@
-import {useState} from 'react'
 import {send} from './socketProvider'
 
-function Palette({activeColor}) {
-    const [color,setColor] = useState('#fff')
+function Palette({colorState}) {
+  const {activeColor,setActiveColor} = colorState
   return (
     <div className='palette'>
-        <input value={activeColor} onChange={(e)=>setColor(e.target.value)} type="color" />
-        <button onClick={()=>send(color)}>Click</button>
+        <input value={activeColor} onChange={(e)=>setActiveColor(e.target.value)} type="color" />
+        <button onClick={()=>send(activeColor)}>Click</button>
     </div>
   )
 }
